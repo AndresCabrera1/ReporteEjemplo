@@ -131,7 +131,7 @@
             <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 19-09-2019 11:31</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 19-09-2019 18:11</span>
     <br style="clear:left"/>
 </div>
 
@@ -172,9 +172,9 @@
                 <table class="outcome-header">
                     <tr>
                         <td colspan="2" class="test-title-bar">
-                            <span class="outcome-icon"><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></span>
+                            <span class="outcome-icon"><i class='fa fa-exclamation-triangle error-icon fa-2x' title='ERROR'></i></span>
                             <span class="test-case-title">
-                                <span class="success-color">cambiar la receta del dia en consola app
+                                <span class="error-color">cambiar la receta del dia en consola app
                                     <span class="related-issue-title"></span>
                                 </span>
                             </span>
@@ -191,73 +191,54 @@
 
     <div id="beforetable"></div>
     <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">Stale element reference exception: stale element reference: element is not attached to the page document</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall""
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="far fa-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>org.openqa.selenium.StaleElementReferenceException </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>co.com.consola.app.companias.task.CrearRecetaTask.performAs(CrearRecetaTask.java:21)<br />co.com.consola.app.companias.stepdefinitions.ConsolaAppCompaniaEsStepDefinitions.elAdminDeConsolaAppTieneUnaRecetaCreada(ConsolaAppCompaniaEsStepDefinitions.java:28)<br />cucumber.runner.Runner.runPickle(Runner.java:80)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                <div class="panel-body">
+                    <a href="pagesource7842122034022603852.html.txt" target="_blank" class="btn btn-info">HTML Source</a>
+                </div>
+            </div>
         <div class="slider-wrapper theme-default">
             <div id="slider">
-                <img src="86b8a102fa055f097766893386c5576805d9c5b7b4bdaf3ae6f74fafa58369a4.png" title=" Dado el admin de consola app tiene una receta creada" width="500"/>
-                <img src="86b8a102fa055f097766893386c5576805d9c5b7b4bdaf3ae6f74fafa58369a4.png" title=" Admin Ingresa a la consola de App Compa&ntilde;ia" width="500"/>
-                <img src="86b8a102fa055f097766893386c5576805d9c5b7b4bdaf3ae6f74fafa58369a4.png" title=" Admin opens the https://consolawebappqa.azurewebsites.net/" width="500"/>
-                <img src="86b8a102fa055f097766893386c5576805d9c5b7b4bdaf3ae6f74fafa58369a4.png" title=" Admin Ingresa a la consola de App Compa&ntilde;ia (completed)" width="500"/>
-                <img src="86b8a102fa055f097766893386c5576805d9c5b7b4bdaf3ae6f74fafa58369a4.png" title=" Admin crea la receta" width="500"/>
-                <img src="86b8a102fa055f097766893386c5576805d9c5b7b4bdaf3ae6f74fafa58369a4.png" title=" Admin enters 'FLAUTAS DE JAMON Y QUESO CASERAS' into Ingresa el nombre de la receta" width="500"/>
-                <img src="13e2bf74d71f84e5464dcceaca83f6bc9b0ac1f13259f38f79529773ce2e9a8e.png" title=" Admin enters 'FLAUTAS DE JAMON Y QUESO CASERAS' into Ingresa el nombre de la receta (completed)" width="500"/>
-                <img src="13e2bf74d71f84e5464dcceaca83f6bc9b0ac1f13259f38f79529773ce2e9a8e.png" title=" Admin enters 'Flautas de jamon y queso caseras' into Ingresa el subtitulo de la receta" width="500"/>
-                <img src="f56a0140a4db24ac3e4dc8accbf22529e587bf404def695deb3adcfedf6bbc17.png" title=" Admin enters 'Flautas de jamon y queso caseras' into Ingresa el subtitulo de la receta (completed)" width="500"/>
-                <img src="f56a0140a4db24ac3e4dc8accbf22529e587bf404def695deb3adcfedf6bbc17.png" title=" Admin enters '8 tortillas mexicanas
-8 lonchas de jam&oacute;n cocido
-16 lonchas de queso emmental' into Ingresa los ingradientes de la receta" width="500"/>
-                <img src="e7c3f67cbfb141bedc795bff3a67ecc3f3e4aff609601da25648e70c0e8d430f.png" title=" Admin enters '8 tortillas mexicanas
-8 lonchas de jam&oacute;n cocido
-16 lonchas de queso emmental' into Ingresa los ingradientes de la receta (completed)" width="500"/>
-                <img src="e7c3f67cbfb141bedc795bff3a67ecc3f3e4aff609601da25648e70c0e8d430f.png" title=" Admin enters '1.- Sobre una tortilla mexicana normal y corriente, ponemos un par de lonchas de jam&oacute;n cocido. Hasta cubrirla de un extremo a otro. Sobre ella, ponemos cuatro lonchas de queso, tambi&eacute;n hasta cubrir. Ponemos el doble de queso que de jamon cocido porque buscamos que se derrita y encontrarnos esto despu&eacute;s, en boca. Seguimos con esto hasta terminar con todas las tortillas
-
-2.- Enrollamos cada una de las flautas, de tal manera que el relleno de jamon y queso quede bien encerrado. Al final, es como un sandwich pero con tortillas, lo que vamos a hacer
-
-3.- Introducimos en el horno, previamente calentado a 200&ordm;C. De esta manera, las tortillas se calentar&aacute;n bien, tomar&aacute;n algo de color y sobre todo, el queso se fundir&aacute;.
-
-4.- Pasados alrededor de 5 minutos, retiramos del horno y servimos inmediatamente' into Ingresa la preparacion de la receta" width="500"/>
-                <img src="470568a615c48bfd7559179b627079256c03972ecfdbe5c83b0c4a31d51ae0ab.png" title=" Admin enters '1.- Sobre una tortilla mexicana normal y corriente, ponemos un par de lonchas de jam&oacute;n cocido. Hasta cubrirla de un extremo a otro. Sobre ella, ponemos cuatro lonchas de queso, tambi&eacute;n hasta cubrir. Ponemos el doble de queso que de jamon cocido porque buscamos que se derrita y encontrarnos esto despu&eacute;s, en boca. Seguimos con esto hasta terminar con todas las tortillas
-
-2.- Enrollamos cada una de las flautas, de tal manera que el relleno de jamon y queso quede bien encerrado. Al final, es como un sandwich pero con tortillas, lo que vamos a hacer
-
-3.- Introducimos en el horno, previamente calentado a 200&ordm;C. De esta manera, las tortillas se calentar&aacute;n bien, tomar&aacute;n algo de color y sobre todo, el queso se fundir&aacute;.
-
-4.- Pasados alrededor de 5 minutos, retiramos del horno y servimos inmediatamente' into Ingresa la preparacion de la receta (completed)" width="500"/>
-                <img src="470568a615c48bfd7559179b627079256c03972ecfdbe5c83b0c4a31d51ae0ab.png" title=" Admin enters '20 minutos' into Ingresa el tiempo de la receta" width="500"/>
-                <img src="1be5d04296693edbd6eb231357947e33844fb741e4af9e9924ef0aecf2e0e77b.png" title=" Admin enters '20 minutos' into Ingresa el tiempo de la receta (completed)" width="500"/>
-                <img src="1be5d04296693edbd6eb231357947e33844fb741e4af9e9924ef0aecf2e0e77b.png" title=" Admin method value text" width="500"/>
-                <img src="54f9e87a64b0dfea5768697aa2e862c4a65718a950c97cefd45955cad722b972.png" title=" Admin method value text (completed)" width="500"/>
-                <img src="54f9e87a64b0dfea5768697aa2e862c4a65718a950c97cefd45955cad722b972.png" title=" Admin method value text" width="500"/>
-                <img src="5452a9ca802c0168290a0259380df72f88cf23833612b8532d6e15344e782812.png" title=" Admin method value text (completed)" width="500"/>
-                <img src="5452a9ca802c0168290a0259380df72f88cf23833612b8532d6e15344e782812.png" title=" Admin enters 'C:\Users\edwin.cabrera\Pictures\3.jpeg' into selecciona la imagen principal para  la receta" width="500"/>
-                <img src="40f5231eb6e75f0cafd41b9c8c7ce7ae4ce07547890c4b7182a2f465f26ba3cb.png" title=" Admin enters 'C:\Users\edwin.cabrera\Pictures\3.jpeg' into selecciona la imagen principal para  la receta (completed)" width="500"/>
-                <img src="40f5231eb6e75f0cafd41b9c8c7ce7ae4ce07547890c4b7182a2f465f26ba3cb.png" title=" Admin enters 'C:\Users\edwin.cabrera\Pictures\4.jpeg' into selecciona la imagen secundaria para  la receta" width="500"/>
-                <img src="a760712f35bd03a3850a966cc4356a2061c2fd196a696c8b2b2d62dde9b88a8f.png" title=" Admin enters 'C:\Users\edwin.cabrera\Pictures\4.jpeg' into selecciona la imagen secundaria para  la receta (completed)" width="500"/>
-                <img src="a760712f35bd03a3850a966cc4356a2061c2fd196a696c8b2b2d62dde9b88a8f.png" title=" Admin clicks on Activa la receta del dia " width="500"/>
-                <img src="eb650bba4084d5abc68269a5d6103fe16d5275cb06136a2eadc6795c28078654.png" title=" Admin clicks on Activa la receta del dia  (completed)" width="500"/>
-                <img src="eb650bba4084d5abc68269a5d6103fe16d5275cb06136a2eadc6795c28078654.png" title=" Admin clicks on guarda la receta del dia " width="500"/>
-                <img src="7935721dc6a82abd4f8879d05aece22cb7e46af09c1e457a5e2b373889d14b7a.png" title=" Admin clicks on guarda la receta del dia  (completed)" width="500"/>
-                <img src="7935721dc6a82abd4f8879d05aece22cb7e46af09c1e457a5e2b373889d14b7a.png" title=" Admin crea la receta (completed)" width="500"/>
-                <img src="7935721dc6a82abd4f8879d05aece22cb7e46af09c1e457a5e2b373889d14b7a.png" title=" Dado el admin de consola app tiene una receta creada (completed)" width="500"/>
-                <img src="1e192f017a6c8a3b2bb37c6f3f581fe6f358c94e0876384ae53f7a5acd2c6285.png" title=" Cuando visualiza la lista de recetas" width="500"/>
-                <img src="1e192f017a6c8a3b2bb37c6f3f581fe6f358c94e0876384ae53f7a5acd2c6285.png" title=" Admin listar recetas task" width="500"/>
-                <img src="1e192f017a6c8a3b2bb37c6f3f581fe6f358c94e0876384ae53f7a5acd2c6285.png" title=" Admin clicks on Despliega el menu de opciones de Recetas" width="500"/>
-                <img src="229f2a99394593d2b75f588de33a86a6b731dc9eeadedfb29f91658107573658.png" title=" Admin clicks on Despliega el menu de opciones de Recetas (completed)" width="500"/>
-                <img src="229f2a99394593d2b75f588de33a86a6b731dc9eeadedfb29f91658107573658.png" title=" Admin clicks on Selecciona la opcion de Listar Recetas" width="500"/>
-                <img src="a000b4703a0be2e70f08e64e24e478edb31ce547b9c141a8260da96bc15da799.png" title=" Admin clicks on Selecciona la opcion de Listar Recetas (completed)" width="500"/>
-                <img src="2d09f19fb9f04f8f0f42821fedec06413d4283cb4035574753019f9e24e25568.png" title=" Admin get text array list element" width="500"/>
-                <img src="ff889d992037d913308d38c0d8e804397ae922494d415e8376c398e86643e680.png" title=" Admin get text array list element (completed)" width="500"/>
-                <img src="ff889d992037d913308d38c0d8e804397ae922494d415e8376c398e86643e680.png" title=" Admin clicks on ingrea a editar la receta " width="500"/>
-                <img src="fdbbe3a4a8444f9ea57fb195913df04f49133e94bc3c4b009178385a9a0e817b.png" title=" Admin clicks on ingrea a editar la receta  (completed)" width="500"/>
-                <img src="fdbbe3a4a8444f9ea57fb195913df04f49133e94bc3c4b009178385a9a0e817b.png" title=" Admin clicks on Activa la receta del dia " width="500"/>
-                <img src="920fc9d5836449405fe6b4308492936e8c186d97e0ba6945bf1bea16fbd22fa1.png" title=" Admin clicks on Activa la receta del dia  (completed)" width="500"/>
-                <img src="920fc9d5836449405fe6b4308492936e8c186d97e0ba6945bf1bea16fbd22fa1.png" title=" Admin clicks on guarda la receta del dia " width="500"/>
-                <img src="2a894b8fe80c0fd661d85f32158343666eac6860b8987835959d5f40d4d91794.png" title=" Admin clicks on guarda la receta del dia  (completed)" width="500"/>
-                <img src="ba0f2099751260d1b8e2fae88829a1cd75037c9ebbaab460de96f771789f8c11.png" title=" Admin listar recetas task (completed)" width="500"/>
-                <img src="ba0f2099751260d1b8e2fae88829a1cd75037c9ebbaab460de96f771789f8c11.png" title=" Cuando visualiza la lista de recetas (completed)" width="500"/>
-                <img src="e7c41ddeb626010851c2740c2b4e03c58f3e456f6219c7b1a3173054ae3c1fa0.png" title=" Entonces cambia la receta del dia en consola app" width="500"/>
-                <img src="e7c41ddeb626010851c2740c2b4e03c58f3e456f6219c7b1a3173054ae3c1fa0.png" title=" Then receta del dia should be (false)" width="500"/>
-                <img src="e7c41ddeb626010851c2740c2b4e03c58f3e456f6219c7b1a3173054ae3c1fa0.png" title=" Then receta del dia should be (false) (completed)" width="500"/>
-                <img src="e7c41ddeb626010851c2740c2b4e03c58f3e456f6219c7b1a3173054ae3c1fa0.png" title=" Entonces cambia la receta del dia en consola app (completed): <span class='success-color'>SUCCESS</span>" width="500"/>
+                <img src="c7a112d1c11846d56f8e74e4d19894de75186e1ae9854e07679c662a7f5dacd4.png" title=" Dado el admin de consola app tiene una receta creada" width="500"/>
+                <img src="c7a112d1c11846d56f8e74e4d19894de75186e1ae9854e07679c662a7f5dacd4.png" title=" Admin Ingresa a la consola de App Compa&ntilde;ia" width="500"/>
+                <img src="c7a112d1c11846d56f8e74e4d19894de75186e1ae9854e07679c662a7f5dacd4.png" title=" Admin opens the https://consolawebappqa.azurewebsites.net/" width="500"/>
+                <img src="c7a112d1c11846d56f8e74e4d19894de75186e1ae9854e07679c662a7f5dacd4.png" title=" Admin Ingresa a la consola de App Compa&ntilde;ia (completed)" width="500"/>
+                <img src="c7a112d1c11846d56f8e74e4d19894de75186e1ae9854e07679c662a7f5dacd4.png" title=" Admin crea la receta" width="500"/>
+                <img src="215458e64ebda42a024597118031089c4d047b83af8fb2893126c50fd5f85a1b.png" title=" Admin enters 'FLAUTAS DE JAMON Y QUESO CASERAS' into Ingresa el nombre de la receta" width="500"/>
+                <img src="8230c2eba4fd24940ce5acedd8761987a4cf7ea5fa80ec9fb28f092d7b3324bd.png" title=" Admin enters 'FLAUTAS DE JAMON Y QUESO CASERAS' into Ingresa el nombre de la receta (completed): <span class='error-color'>ERROR</span>" width="500"/>
             </div>
         </div>
 
