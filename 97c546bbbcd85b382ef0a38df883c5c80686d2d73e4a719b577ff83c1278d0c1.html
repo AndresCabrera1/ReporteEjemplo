@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Serenity Reports</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+
+
+
+    <script class="code" type="text/javascript">$(document).ready(function () {
+
+            $('.scenario-result-table').DataTable({
+                "order": [[0, "asc",], [3, "asc",]],
+                "pageLength": 10,
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            // Results table
+            $('#test-results-table').DataTable({
+                "order": [[0, "asc",], [3, "asc",]],
+                "pageLength": 10,
+                "lengthMenu": [[10, 25, 50, 100, 200, -1], [10, 25, 50, 100, 200, "All"]]
+            });
+
+            $('#evidence-table').DataTable({
+                searching: false,
+                paging: false,
+                info: false
+            });
+
+            $(".feature-coverage-table").DataTable({
+                searching: false,
+                paging: false,
+                info: false
+            });
+
+            $(".feature-coverage-table-with-pagination").DataTable({
+                order: [[0, "asc",]],
+                pageLength: 10,
+                language: {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+        });
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Automatizacion Carulla app</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+
+
+    <div id="contenttop">
+        <div class="middlebg">
+        <span class="breadcrumbs"><a href="index.html">Home</a>
+                    > Manual-Test-Evidence 
+                > <span
+                    class="truncate-60">/Lh3.Googleusercontent.Com/J3Y7ZAOT78t8RwdStcPpL4W14iW1waD2nYftYhxAa7E3H5O Ekc4mfdmjonpotl7xqeec2n3oaiyfmco4cjwswsavfqodptoyux9etsp47faym11pbc Mcmuaw0QYld3HW-H6yo7pp0h0tuq60ivd6ja6vz7kioz6zlryfn1nxlahppfogvfcqbb1n4sd0abcbdlaizthkoobbzzfherquqra770jp88xsvpegxmdyih35h0v6lvym4kp Vkhjlh3wfuuot-B14evauubehjvtrvvauio9kjppzvczimiz1f8jlxuiu1wbem9ph9uv7kjaygxhg6xlneaoi9mmouyn8cpedf8mtstqtp9omvblejcuzz8xlfj1 Eiioyybukqpndezj6uvfssfk0plt-6gy8i16hra7aa5dtq8aakuj-5nqyhzg23ci8fxcgadt3o83b-C4jdwqnlxrwu9vtc9 6b4wrmfkpdqojdox7qsgdto2vg6uj-ZHxGSsPDmzVvMGQKvveCtbtnl4RPCz4zrWNvBGamdNdnBCd36SMtl70nV9ZxdJ B6qad1-CYvxUBQdPHXUjxRz8qCen7mwZod7Qcc6XmtUU7k0PnyyX Kfiikt684incritbp4tysltrexlhsvca4ilsvhk BgTdHlHYgONYzLyCFkFIOMf9TRgmQRBEfMGDOCOsrtQJxI Oqxwpqdcqzqlxrmgphs6-8fk9iohp6ivzik3q8hzwpdhdfq8=W440-H950-No),[SELECCIONA TARJETA IOS](Https://Lh3.Googleusercontent.Com/WZD9JNL1wX2DFlDMBZbSHCWSLSl803Mv3vGtCU5fPxatcPmvauT-Ygcpdbyje75vigydwo2djkmbm-Jzc5jaj Bhk4zuGQX-3ztnr Hssc1bhruebxvcsvjfty7 NgIDIggwz7cocDuWrSpNbjTBq1MmTcajgeFpesoDf5OO0uV- Gznsufclu2rcn8rg12jmy8tgn5xchg0etidaakdl6xaqxrymydw916tjjn0p8a7jbe0y3kwz6e59q0h19gtxm9a5 I5yVk59F4ixqdJ-Io1vy1-Yuvazzkh72qy5nbekvyygpg48xoixl7j5ymm5s3q0xmivsv9rlmwhwxqejgre80l6hfsnjejkjnfewn-Tisxm8yuo3izpkqxkmlhidynbbzgcwh0ffilnbhf8htffkckisocgxufthveg7idnfgtzp1cpz8sj2wc4ifbnzvjucogoyuwwglbaboaludox5yyjpxwtme2kw9lyynjjcvhkplp9vy7j1 09ajmdwnuqzrsumafh6l-Ceatklaodu13zgocc73nqbypurtmj2ppreetwr7uf--9uqtu Mklexerlafvkjvo6taxtzokkoy61nh2q2we1qx84r460ash-Y1gkv G-C5LNsM0MEZZS5jhiFXTOAoV-6plzd-T0jD1Ud1Om4IxE-2xat56cdbehyaqedi3szdbig4w7don9t6c3qf8mwe9cje4arlhj4tzrdxvfaoiavyiwhfwym5=W440-H950-No),[SCAN &amp; GO IOS](Https://Lh3.Googleusercontent.Com/VRM-8zrg-Plilfne1uxsf6doygj-Buffr8vhn3u2e7syfmzldvrqdzbhtajpaj2suo49mvh-Iobo6n2qapsfh5m9a9ijr5cvy4c7 Gy93pz2msaupki8hlbxaghahshsm5xbopjdjn7 Hpmqqjyknz1yggu9bzmfdvocby5owqwkw7xzak7vbfuixh1ptmjdjegftgqzpnyo-FOzZv7lldSUP1hw0sdw8OFe5l78nEUCq3iCaVMkBM-3fqzicf3ydajsype0fpgtpdhclyww8amjzih3pgr7h4ul1ykyriq6ttltwtmkeulshx-V3XFdShoWmIHpESbdzW Ml7K9jLtSxnq47NPL-Oo7TMjKO 8iqourenjclkz6oo1ofsn64nmfifhy8 Zrehhvie5kfbpatps55icqzx F8GjVcal9ncE29Gp1YNECC3MSTyZs4UhUNstMfZwP Ezqydo3fh41a5cluu7iitvd-Yivtu VztiHfb0R-Oyldfueqf8kp4afxxhcfj-Qu161k4pgvmukw8c043cq2zua3txj4ypvgm0gv1lcdfknbgy36qtnx8zgw3nndvbeykao7yql7owfx91wiixbk4b Rmn8m5w7rycsilu 36ntery6d50qtpk-Fwqrppdawjnrvqt4rfyhsyst45tjc-JXin9SO0d3mAWoTDf1jAcJYe0hQDbAS9TvJrXqI3ND97uUjgXu0CBzHc8lNILaqTGwvpQcy664x2P-=W440-H950-No),[PRODUCTOS ESCANEADOS IOS](Https://Lh3.Googleusercontent.Com/Iby-MY Cfuh4y0wvqv42wjqj2eqe-Onh7ju4e77-ZRiAFKtG Exkpo9otszuhnp0dthr9xkhcpbdw6ch7uy8zkuttwvimtgjgrkpwswtvd98wvuhq0zqkct1hk2ebkgjjsft6xtkok23zfmmbqjryzzponwtvhy- 6yf8wvihrembncrzawbabpsmyhjwqpzn5td64qnvkugm6uptzlpyxo4n4lwyktftios81yjq5d47gpbpi6ghtyt59gg9eqmxlgqbqzvvglggiwyar3sddsmpv-I176hre43ttodt1mcvcqq96vpdtys8etcx5d Hcgnh4uxsr7mgMYkfq96-C6rfxs6zxvyeiixny13kk Zwf8iNRpcNMeYFnxTZ-Eklepuqcrdwpnhdzmhrl8mtcwhgcb9zypjfvwzvygwlgqpvlfptlrdxs Fds4fxjerhkljdhq9co9gk3dvrcev2etgzdicfrj Ydd Hljr-FGr0zBHH M-AzPUZ3hgda2mI60XoJUizIZ9FJ3jOQrHCkn61cVQx4EwSMuBvJkN3Jt3M3BRX71qvmB-Asfijatqp3mzigclriigxnluw5hziaj8ndq7ouic1qjy-Ov3hrwplsmvxuxhxkgdw3ug0p5 Uqam0kzwdsgf2psqki5wzuvjo84aihxi4nptf4arx-Uv2dym0lgjmxr5p2nk2vfhezoqz9gxhdwav3b8eyn9vt6qwmcwo7mjtgxao Guiidw1s6a=W440-H950-No),[CARRO COMPRAS IOS](Https://Lh3.Googleusercontent.Com/VB5KKKi9Vj0HvIyGGaIQpfYXAmVSfShnXVyToyBDD36pyhWJ7xkykK1xVDMqYBM16IQBfZUIzT9KPtFUvdOHK QrZdpbk8gUOYdSKWjtmH4WeW5StEwgFIe2rISE-P-BXdEhWmQzTiemH3XeQKDln6oxniIV4aCNqP-Cfffk6cjgn9xim1xzl0u17ety9fsvztrnzqxp6xokkycffzh8ettbkp Pga9xwvrizxquptt1o7wouyuyh0vgqxfiiyyqvjd3sd3ibfxkxqtmcac8q3mqqtzcarjfzztvsdbkl48zx4q7hap5k62qsdba6tchzmxbqumuethfddlyktqhqdg TZH Mzllfd-5maskx3dgho0up1dczbqdv96n Jjjimstuy4h Xj4ihckv7b5f6dul Xcoqkbc75cnbbvwlajdc Ew-2rpp8yus8zev6x-Plcmij7nywlfv3pu0uphwsu43ngnaxk19dqm4rb50hjezb-Rswtwouf0hpfnqqwn6ny8gte-6cxigz0of-YYkKF7M8hSv0AtRRhSWQA2SaX-ZIoq2FedJTWgABB4VJ 4-SQsppPAqAez4PDs8Fj9jU Cq2yingowiab Ouboteqtxyrlops-F3hBicHUVH 4oneywpqvwg-TGv08hoCwklS2j1W8zXF-IbGqHI7LAJNXrxRjFRnzvBBCSEvaBKC0EMLkXlcOFRCR1UHtzp6fypGO4FPXKNHCrIpQsAqJGXtgbcS=W440-H950-No),[PAGO CONFIRMADO IOS](Https://Lh3.Googleusercontent.Com/OZE-Fbyt0kdgazdoh-Ljesgoujngk7oyduc1e3ekuscelx4dy7mznpppm1ecu3kwxjlzt0uekpktunj6sk9pjk2zfyrswxmogbyjgd5ascalm9bo1 9qb Ucu5k0cdi2fdwqbx4vzl6kmqlmjeivqzaxnhaugwz Vkbroe43-Lg87pigozle2og56gusmnk7xes9bvlykxiyvtb8zkol-Jfcu2kdk-N56hyzwbrlxkjmpqi6velxtescbpqqep9amzfzgeorkekunmfs8-U3ldempo 8fqbbotizbgcgdhq1zdxbhxjqput9vuheyvcpzo-0eujb4vzmgxtu U4pnxexzulxmv4gtkctbbf0evgmdvn3jpeec EwiC Qi Mji3qlmhy9lx6nf8qiw1poixlnxc1yhveyobht1lydxr4yfxf7ahmw3ajq4tlfctd7wczih8afiemyar-8zlsvzqr9z7wm2no62pnevl2ia 75ldwyh5tm06fnxm59am0ir-Uogbfzf0dngqc5spm7cb4nauxhjz4xld5-Zqtqt-Gc8fbdmef1xicedloqvcsqkgi4tjcdhdfzzow8p19rfhjtszymwm7qdtkm49b0s Fdtkahi5bud2b6mfaj0cxr7hmp4xdnjxf45djf9eu0pwhqd78eit7yti2xwy 1agpwuezs Ahaosg5myuqqy C2XVeSTy3unp7VjL9BosUUfGrF0iX4z9PYBXsOUsnP-Fkqpcu=W440-H950-No),[HOME ANDROID](Https://Lh3.Googleusercontent.Com/4mflubx7437vwa6m1btagidkq8myfiex9vi2 -4owm1k19vwhkuqqtzobclm60ndaeauild6kohemgnvrso8f01p7ftxzlwemt2buvfoqsn6kqmgjme7exoxsq4r6plkduo-RJFjfkbJptomwOcdpsGAdyr1vX-Jojnvncnbqdxwe-Haa3zxnnw6kjmh82vdragqyr8tbtqlzgbemgsbec8do9ezm9hzalm6gqhb G1waOTvSmeBFb9j2QW Wag6qnMpGBakhJhAJpYCfveaaRwAIM-9iqarxkozyjaxuc4ltpgtwehzlltlx Doddd7vfdjjyfifmkeenhhsaccca-Cari7yhkewbie7v Fockfl1-0wvjqofgnajl55lqjyikjdxvzyqwulzezjxonrfb4san908gt2rik5vtfvlglii9snfbdt5okhu-0uyauasjqovnzh8kgxyngeqymuys869eptshuf8f3a77ayh2iwmcrdiubzl-8a2xb0tavxxovear69nifwqxiaftfc1pj43vo1h4fjoulhoqcyrpbvldshomozf1klb3xsyk8kys9qn-Fspoj7aza8vb1geqkq3tftnucfrw28-Tm-Lsdbz7q Vcgtlgcqwe42xwhxajrekvehhk9xhvaadmznlho0i4jiwofjevn2rr8xcjc5okixom9a8zblaqn47dyxhro Cj Lc Y7ko04k8coish PWO1G8IeE9V0S59lYbU5WjX=W439-H950-No),[SELECCIONA TARJETA ANDROID](Https://Lh3.Googleusercontent.Com/C5mxgm9jkdtusszn8jptqa5exquq4dn8ncufqedubcbemmzo9x5kamvtjca5mwuzsssbl3qnjufhtlg4rbzp S9stdp1mxiat4jnrby8asbul27esyf 8eslcioh3zysgasn4hsbrblzvrpn-Fysvrkgvogj41a6abyqp4plxwnsevmpnmadqfkpxneqquo6op-Bzqpz0ihdextzyejkd-HTrrFjE9D2Df3VOyw0GdvdhICSEVkQk7UH307trr5Ze7nzroOD3eGrKMMvb4iXjJFk8TQ5XFAQ52aO8nNG3VwA Ky51-E3HW6qLlnW5dfuTAPDjjfoU90FOcVk1136R05ZwOrt3lZdsfwxz2sbdyzKoroUpuA7o2dvijwCmjFshd2yhN1GjPLnU8r9KJNrY08I0gShPsk8tG-GAjIV0mORYJh9vW Vefssindsqoviqacbxzkq1t95bn6cpcmuo-Ryvojjq4gjv-Vajjh18uv9bxgwzm Afl-39wltwhxy6jaf5hztq8bayjxao-Pmb7ijajxdskzjinkzu7purrfsxdb4evuoug6nw-3yiplbdsjuyb9ewix2l9w-Ddshmxmahs Bhwek9h0s3yypou8r64wsr08-LeAYI7TCQ0JfOoCO40mxQ1U2NvQYm2w1Jx4EwvpeDxpYtjYTDNy45osrLeAKKoSPsf2zyCIG Ikq9oruyv3d0fba9qurdjx9fdkvdp5jabid2mjmf7cubcofevcm=W439-H950-No),[SCAN &amp; GO ANDROID](Https://Lh3.Googleusercontent.Com/Ancyyz6z40iuklxy CSarTsuv2ecaaUeNUNZpl3fq6VNhKvbx9tbQR Almlglh 0rc8cekj-7ralunowutoxn8nabp1kusfxqmic Hpswoyehanb6pgnsy-0jz7p1y4-Sh9ec0wpflmi2v-Iwgsonahfrv6zvlkvyfigwqlgn79f8125a97jdxgpxpcgjui3eswdykhq6u3wnrdl8ym5py7sagmvqxeazovxuitkwzvdiuoikl91tlet9muovviyjjfhvjkmmjaed6dx 6 HbnVe0XbxF8MQK850Kdtsryylc3BJUE7ZEKxbXRRIezwiDm2zrpkiKPtV 8xps UNtMXhVwlGUlwY8Af1YFejkpbnPSwwuJ0NeA7yleFS 3ag5pjyax8rbglqz4gvce1g9xt753szb6 Edx88e6uegrfy1teydrhaj01vqlbundv7z Xzt- Gy0yipk35mlg4zmt28sfowwfrtimc7h86stoteuqlwu8lzndqg Fnhpj6qlctdak5gtejk8ds9omqxo1gihj6rxibopnu0pvcg0hef1e4naibf5a4y0r-Ez-Pv06UQ4lFoVua5ACJU-8 IGqV1HoA54K-Aulazfeeev5popapor0j3hprrqwfpglzzaax9llzulq0o0-Jextxg18ueeblk-Gpmztmyl0kenhrkri98godrs6o7rmkzmnhpggibwertwbwplyj03uk7-Ltyy9hxnq S1aresl2hfzrqj1w=W439-H950-No),[PRODUCTOS ESCANEADOS ANDROID](Https://Lh3.Googleusercontent.Com/3jgl3kgwwhixeha38ovbblbveabh0vqqbtn1op7vksrlzcglmrcuzcem0hasuq2g1a2qdwvtg1oxlxieh0w 9aib1wlmpynerx5vcz3plvj9zocp1-Xodrprhsxd3tam8qnfmh4fvp6tw8xtb7rg9i3tzpzkytxrshx5hivamm4kunw9xauam1k2oty8ar6ojfk5lklfnaiaqvs68dceon-L4mxrkaijgzg2h8kjahx55maxjpcjvfbah0aoo02qk 7a-Pcys6hrxaj5udkduerdmoq7o921 7lxgccuqtcdlwgep2pqmmft0ieionhfodjgd1n1ytp5ivxhzwjmr8gicn5zdnda3mjrk006dghzbn9aaj6b4p6pjcecinwiamb7r5bhemftq5arcsluznqsd2mkc2phzfbt9a0m1hxahas0jucqplwy3d0ynvhqzgg1r3salt6 GCm4gPioPFoMomz6lRN3UR 098wqvywqquswfshffht3whieg5trds81qio0kenzseheq-O3ukbxqrohvs6uho64hkzyo8kwyq0ttegyfhejeezfws-H3yn ZxOjkRtcOonqvwQ6maARk51wq8s9aF537TA Di1gl2dbbgyo6jweywg-Qbggns1cxy6mt5lkvkcgfzaiyknc1gu7jkyoqo5xgqsavwulci5uizrl9ma70gzskonvnppozmcd3veiycjmkdbwrlrkmbfgb7nezdtjuhu90f8jarbw=W439-H950-No),[CARRO COMPRAS ANDROID](Https://Lh3.Googleusercontent.Com/ -Ag1AHQJR07mk2ncLM Yymr4w2fxrtdjtqqrdr Kzlfbtakvrlf Sclsn0fhut9ezizyw8tfthi72gnxysbjabyhw5sqeh8ihzq1wfy8hp6c16w6oa0ap6k9qrssjnoxlc502tv8odjzy9pcukcoqwh1qsbzusyk6gtn9qr1-Pdn57xchedontmeewc9puytgxpwmmbblaovyawmsdzn5ea3ztvnxvhhomlriywdhlhzlcozmqv8ovvlckccgt4ddhordaufkpzemc7q0fr85hpywqhwii8akohj0mau0s29kporgpavbywyb3zgvm45ehgpx7mkupfzht10avg84ombfbynbnkjw84ruxzslbx Wnportvjxfdnpsvhcekc9exrxfk7dxsccx7 Lihngc Bk2nSVPWmu5E8KtcJP4MhbnaeETa5KF6mzrS-5nm7bow1k9beydmzp3k5vqplz0wonecj1y0dsycstjuryn80h7dl-JKzo8Pnzy69NtYV7do3M Xc3PWCEeAq4N26HYYsBhsP0tB9ISQiH--Kpg3ov-1vzc4cwuropw4-9dpa5stcs9lyuavkvdlg504ycipzek15igoj3jyig2zwzu1zumepnzy34nuoedlil0roe1bgojc Tkuut8lramahjanpbg4fvw2ft8kwjdsafaw1d-9fpzqpxrsrlvjhyemyylueha2cuntzpaso2lbfb-Njw3tp9wlbugulozptyfxmhg=W439-H950-No)</span>
+        </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 17-10-2019 17:22</span>
+    <br style="clear:left"/>
+</div>
+    <div class="clr"></div>
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="middlb">
+            <div class="table">
+
+                <h2><i class='fa fa-tags'></i> Manual-Test-Evidence: /Lh3.Googleusercontent.Com/J3Y7ZAOT78t8RwdStcPpL4W14iW1waD2nYftYhxAa7E3H5O Ekc4mfdmjonpotl7xqeec2n3oaiyfmco4cjwswsavfqodptoyux9etsp47faym11pbc Mcmuaw0QYld3HW-H6yo7pp0h0tuq60ivd6ja6vz7kioz6zlryfn1nxlahppfogvfcqbb1n4sd0abcbdlaizthkoobbzzfherquqra770jp88xsvpegxmdyih35h0v6lvym4kp Vkhjlh3wfuuot-B14evauubehjvtrvvauio9kjppzvczimiz1f8jlxuiu1wbem9ph9uv7kjaygxhg6xlneaoi9mmouyn8cpedf8mtstqtp9omvblejcuzz8xlfj1 Eiioyybukqpndezj6uvfssfk0plt-6gy8i16hra7aa5dtq8aakuj-5nqyhzg23ci8fxcgadt3o83b-C4jdwqnlxrwu9vtc9 6b4wrmfkpdqojdox7qsgdto2vg6uj-ZHxGSsPDmzVvMGQKvveCtbtnl4RPCz4zrWNvBGamdNdnBCd36SMtl70nV9ZxdJ B6qad1-CYvxUBQdPHXUjxRz8qCen7mwZod7Qcc6XmtUU7k0PnyyX Kfiikt684incritbp4tysltrexlhsvca4ilsvhk BgTdHlHYgONYzLyCFkFIOMf9TRgmQRBEfMGDOCOsrtQJxI Oqxwpqdcqzqlxrmgphs6-8fk9iohp6ivzik3q8hzwpdhdfq8=W440-H950-No),[SELECCIONA TARJETA IOS](Https://Lh3.Googleusercontent.Com/WZD9JNL1wX2DFlDMBZbSHCWSLSl803Mv3vGtCU5fPxatcPmvauT-Ygcpdbyje75vigydwo2djkmbm-Jzc5jaj Bhk4zuGQX-3ztnr Hssc1bhruebxvcsvjfty7 NgIDIggwz7cocDuWrSpNbjTBq1MmTcajgeFpesoDf5OO0uV- Gznsufclu2rcn8rg12jmy8tgn5xchg0etidaakdl6xaqxrymydw916tjjn0p8a7jbe0y3kwz6e59q0h19gtxm9a5 I5yVk59F4ixqdJ-Io1vy1-Yuvazzkh72qy5nbekvyygpg48xoixl7j5ymm5s3q0xmivsv9rlmwhwxqejgre80l6hfsnjejkjnfewn-Tisxm8yuo3izpkqxkmlhidynbbzgcwh0ffilnbhf8htffkckisocgxufthveg7idnfgtzp1cpz8sj2wc4ifbnzvjucogoyuwwglbaboaludox5yyjpxwtme2kw9lyynjjcvhkplp9vy7j1 09ajmdwnuqzrsumafh6l-Ceatklaodu13zgocc73nqbypurtmj2ppreetwr7uf--9uqtu Mklexerlafvkjvo6taxtzokkoy61nh2q2we1qx84r460ash-Y1gkv G-C5LNsM0MEZZS5jhiFXTOAoV-6plzd-T0jD1Ud1Om4IxE-2xat56cdbehyaqedi3szdbig4w7don9t6c3qf8mwe9cje4arlhj4tzrdxvfaoiavyiwhfwym5=W440-H950-No),[SCAN & GO IOS](Https://Lh3.Googleusercontent.Com/VRM-8zrg-Plilfne1uxsf6doygj-Buffr8vhn3u2e7syfmzldvrqdzbhtajpaj2suo49mvh-Iobo6n2qapsfh5m9a9ijr5cvy4c7 Gy93pz2msaupki8hlbxaghahshsm5xbopjdjn7 Hpmqqjyknz1yggu9bzmfdvocby5owqwkw7xzak7vbfuixh1ptmjdjegftgqzpnyo-FOzZv7lldSUP1hw0sdw8OFe5l78nEUCq3iCaVMkBM-3fqzicf3ydajsype0fpgtpdhclyww8amjzih3pgr7h4ul1ykyriq6ttltwtmkeulshx-V3XFdShoWmIHpESbdzW Ml7K9jLtSxnq47NPL-Oo7TMjKO 8iqourenjclkz6oo1ofsn64nmfifhy8 Zrehhvie5kfbpatps55icqzx F8GjVcal9ncE29Gp1YNECC3MSTyZs4UhUNstMfZwP Ezqydo3fh41a5cluu7iitvd-Yivtu VztiHfb0R-Oyldfueqf8kp4afxxhcfj-Qu161k4pgvmukw8c043cq2zua3txj4ypvgm0gv1lcdfknbgy36qtnx8zgw3nndvbeykao7yql7owfx91wiixbk4b Rmn8m5w7rycsilu 36ntery6d50qtpk-Fwqrppdawjnrvqt4rfyhsyst45tjc-JXin9SO0d3mAWoTDf1jAcJYe0hQDbAS9TvJrXqI3ND97uUjgXu0CBzHc8lNILaqTGwvpQcy664x2P-=W440-H950-No),[PRODUCTOS ESCANEADOS IOS](Https://Lh3.Googleusercontent.Com/Iby-MY Cfuh4y0wvqv42wjqj2eqe-Onh7ju4e77-ZRiAFKtG Exkpo9otszuhnp0dthr9xkhcpbdw6ch7uy8zkuttwvimtgjgrkpwswtvd98wvuhq0zqkct1hk2ebkgjjsft6xtkok23zfmmbqjryzzponwtvhy- 6yf8wvihrembncrzawbabpsmyhjwqpzn5td64qnvkugm6uptzlpyxo4n4lwyktftios81yjq5d47gpbpi6ghtyt59gg9eqmxlgqbqzvvglggiwyar3sddsmpv-I176hre43ttodt1mcvcqq96vpdtys8etcx5d Hcgnh4uxsr7mgMYkfq96-C6rfxs6zxvyeiixny13kk Zwf8iNRpcNMeYFnxTZ-Eklepuqcrdwpnhdzmhrl8mtcwhgcb9zypjfvwzvygwlgqpvlfptlrdxs Fds4fxjerhkljdhq9co9gk3dvrcev2etgzdicfrj Ydd Hljr-FGr0zBHH M-AzPUZ3hgda2mI60XoJUizIZ9FJ3jOQrHCkn61cVQx4EwSMuBvJkN3Jt3M3BRX71qvmB-Asfijatqp3mzigclriigxnluw5hziaj8ndq7ouic1qjy-Ov3hrwplsmvxuxhxkgdw3ug0p5 Uqam0kzwdsgf2psqki5wzuvjo84aihxi4nptf4arx-Uv2dym0lgjmxr5p2nk2vfhezoqz9gxhdwav3b8eyn9vt6qwmcwo7mjtgxao Guiidw1s6a=W440-H950-No),[CARRO COMPRAS IOS](Https://Lh3.Googleusercontent.Com/VB5KKKi9Vj0HvIyGGaIQpfYXAmVSfShnXVyToyBDD36pyhWJ7xkykK1xVDMqYBM16IQBfZUIzT9KPtFUvdOHK QrZdpbk8gUOYdSKWjtmH4WeW5StEwgFIe2rISE-P-BXdEhWmQzTiemH3XeQKDln6oxniIV4aCNqP-Cfffk6cjgn9xim1xzl0u17ety9fsvztrnzqxp6xokkycffzh8ettbkp Pga9xwvrizxquptt1o7wouyuyh0vgqxfiiyyqvjd3sd3ibfxkxqtmcac8q3mqqtzcarjfzztvsdbkl48zx4q7hap5k62qsdba6tchzmxbqumuethfddlyktqhqdg TZH Mzllfd-5maskx3dgho0up1dczbqdv96n Jjjimstuy4h Xj4ihckv7b5f6dul Xcoqkbc75cnbbvwlajdc Ew-2rpp8yus8zev6x-Plcmij7nywlfv3pu0uphwsu43ngnaxk19dqm4rb50hjezb-Rswtwouf0hpfnqqwn6ny8gte-6cxigz0of-YYkKF7M8hSv0AtRRhSWQA2SaX-ZIoq2FedJTWgABB4VJ 4-SQsppPAqAez4PDs8Fj9jU Cq2yingowiab Ouboteqtxyrlops-F3hBicHUVH 4oneywpqvwg-TGv08hoCwklS2j1W8zXF-IbGqHI7LAJNXrxRjFRnzvBBCSEvaBKC0EMLkXlcOFRCR1UHtzp6fypGO4FPXKNHCrIpQsAqJGXtgbcS=W440-H950-No),[PAGO CONFIRMADO IOS](Https://Lh3.Googleusercontent.Com/OZE-Fbyt0kdgazdoh-Ljesgoujngk7oyduc1e3ekuscelx4dy7mznpppm1ecu3kwxjlzt0uekpktunj6sk9pjk2zfyrswxmogbyjgd5ascalm9bo1 9qb Ucu5k0cdi2fdwqbx4vzl6kmqlmjeivqzaxnhaugwz Vkbroe43-Lg87pigozle2og56gusmnk7xes9bvlykxiyvtb8zkol-Jfcu2kdk-N56hyzwbrlxkjmpqi6velxtescbpqqep9amzfzgeorkekunmfs8-U3ldempo 8fqbbotizbgcgdhq1zdxbhxjqput9vuheyvcpzo-0eujb4vzmgxtu U4pnxexzulxmv4gtkctbbf0evgmdvn3jpeec EwiC Qi Mji3qlmhy9lx6nf8qiw1poixlnxc1yhveyobht1lydxr4yfxf7ahmw3ajq4tlfctd7wczih8afiemyar-8zlsvzqr9z7wm2no62pnevl2ia 75ldwyh5tm06fnxm59am0ir-Uogbfzf0dngqc5spm7cb4nauxhjz4xld5-Zqtqt-Gc8fbdmef1xicedloqvcsqkgi4tjcdhdfzzow8p19rfhjtszymwm7qdtkm49b0s Fdtkahi5bud2b6mfaj0cxr7hmp4xdnjxf45djf9eu0pwhqd78eit7yti2xwy 1agpwuezs Ahaosg5myuqqy C2XVeSTy3unp7VjL9BosUUfGrF0iX4z9PYBXsOUsnP-Fkqpcu=W440-H950-No),[HOME ANDROID](Https://Lh3.Googleusercontent.Com/4mflubx7437vwa6m1btagidkq8myfiex9vi2 -4owm1k19vwhkuqqtzobclm60ndaeauild6kohemgnvrso8f01p7ftxzlwemt2buvfoqsn6kqmgjme7exoxsq4r6plkduo-RJFjfkbJptomwOcdpsGAdyr1vX-Jojnvncnbqdxwe-Haa3zxnnw6kjmh82vdragqyr8tbtqlzgbemgsbec8do9ezm9hzalm6gqhb G1waOTvSmeBFb9j2QW Wag6qnMpGBakhJhAJpYCfveaaRwAIM-9iqarxkozyjaxuc4ltpgtwehzlltlx Doddd7vfdjjyfifmkeenhhsaccca-Cari7yhkewbie7v Fockfl1-0wvjqofgnajl55lqjyikjdxvzyqwulzezjxonrfb4san908gt2rik5vtfvlglii9snfbdt5okhu-0uyauasjqovnzh8kgxyngeqymuys869eptshuf8f3a77ayh2iwmcrdiubzl-8a2xb0tavxxovear69nifwqxiaftfc1pj43vo1h4fjoulhoqcyrpbvldshomozf1klb3xsyk8kys9qn-Fspoj7aza8vb1geqkq3tftnucfrw28-Tm-Lsdbz7q Vcgtlgcqwe42xwhxajrekvehhk9xhvaadmznlho0i4jiwofjevn2rr8xcjc5okixom9a8zblaqn47dyxhro Cj Lc Y7ko04k8coish PWO1G8IeE9V0S59lYbU5WjX=W439-H950-No),[SELECCIONA TARJETA ANDROID](Https://Lh3.Googleusercontent.Com/C5mxgm9jkdtusszn8jptqa5exquq4dn8ncufqedubcbemmzo9x5kamvtjca5mwuzsssbl3qnjufhtlg4rbzp S9stdp1mxiat4jnrby8asbul27esyf 8eslcioh3zysgasn4hsbrblzvrpn-Fysvrkgvogj41a6abyqp4plxwnsevmpnmadqfkpxneqquo6op-Bzqpz0ihdextzyejkd-HTrrFjE9D2Df3VOyw0GdvdhICSEVkQk7UH307trr5Ze7nzroOD3eGrKMMvb4iXjJFk8TQ5XFAQ52aO8nNG3VwA Ky51-E3HW6qLlnW5dfuTAPDjjfoU90FOcVk1136R05ZwOrt3lZdsfwxz2sbdyzKoroUpuA7o2dvijwCmjFshd2yhN1GjPLnU8r9KJNrY08I0gShPsk8tG-GAjIV0mORYJh9vW Vefssindsqoviqacbxzkq1t95bn6cpcmuo-Ryvojjq4gjv-Vajjh18uv9bxgwzm Afl-39wltwhxy6jaf5hztq8bayjxao-Pmb7ijajxdskzjinkzu7purrfsxdb4evuoug6nw-3yiplbdsjuyb9ewix2l9w-Ddshmxmahs Bhwek9h0s3yypou8r64wsr08-LeAYI7TCQ0JfOoCO40mxQ1U2NvQYm2w1Jx4EwvpeDxpYtjYTDNy45osrLeAKKoSPsf2zyCIG Ikq9oruyv3d0fba9qurdjx9fdkvdp5jabid2mjmf7cubcofevcm=W439-H950-No),[SCAN & GO ANDROID](Https://Lh3.Googleusercontent.Com/Ancyyz6z40iuklxy CSarTsuv2ecaaUeNUNZpl3fq6VNhKvbx9tbQR Almlglh 0rc8cekj-7ralunowutoxn8nabp1kusfxqmic Hpswoyehanb6pgnsy-0jz7p1y4-Sh9ec0wpflmi2v-Iwgsonahfrv6zvlkvyfigwqlgn79f8125a97jdxgpxpcgjui3eswdykhq6u3wnrdl8ym5py7sagmvqxeazovxuitkwzvdiuoikl91tlet9muovviyjjfhvjkmmjaed6dx 6 HbnVe0XbxF8MQK850Kdtsryylc3BJUE7ZEKxbXRRIezwiDm2zrpkiKPtV 8xps UNtMXhVwlGUlwY8Af1YFejkpbnPSwwuJ0NeA7yleFS 3ag5pjyax8rbglqz4gvce1g9xt753szb6 Edx88e6uegrfy1teydrhaj01vqlbundv7z Xzt- Gy0yipk35mlg4zmt28sfowwfrtimc7h86stoteuqlwu8lzndqg Fnhpj6qlctdak5gtejk8ds9omqxo1gihj6rxibopnu0pvcg0hef1e4naibf5a4y0r-Ez-Pv06UQ4lFoVua5ACJU-8 IGqV1HoA54K-Aulazfeeev5popapor0j3hprrqwfpglzzaax9llzulq0o0-Jextxg18ueeblk-Gpmztmyl0kenhrkri98godrs6o7rmkzmnhpggibwertwbwplyj03uk7-Ltyy9hxnq S1aresl2hfzrqj1w=W439-H950-No),[PRODUCTOS ESCANEADOS ANDROID](Https://Lh3.Googleusercontent.Com/3jgl3kgwwhixeha38ovbblbveabh0vqqbtn1op7vksrlzcglmrcuzcem0hasuq2g1a2qdwvtg1oxlxieh0w 9aib1wlmpynerx5vcz3plvj9zocp1-Xodrprhsxd3tam8qnfmh4fvp6tw8xtb7rg9i3tzpzkytxrshx5hivamm4kunw9xauam1k2oty8ar6ojfk5lklfnaiaqvs68dceon-L4mxrkaijgzg2h8kjahx55maxjpcjvfbah0aoo02qk 7a-Pcys6hrxaj5udkduerdmoq7o921 7lxgccuqtcdlwgep2pqmmft0ieionhfodjgd1n1ytp5ivxhzwjmr8gicn5zdnda3mjrk006dghzbn9aaj6b4p6pjcecinwiamb7r5bhemftq5arcsluznqsd2mkc2phzfbt9a0m1hxahas0jucqplwy3d0ynvhqzgg1r3salt6 GCm4gPioPFoMomz6lRN3UR 098wqvywqquswfshffht3whieg5trds81qio0kenzseheq-O3ukbxqrohvs6uho64hkzyo8kwyq0ttegyfhejeezfws-H3yn ZxOjkRtcOonqvwQ6maARk51wq8s9aF537TA Di1gl2dbbgyo6jweywg-Qbggns1cxy6mt5lkvkcgfzaiyknc1gu7jkyoqo5xgqsavwulci5uizrl9ma70gzskonvnppozmcd3veiycjmkdbwrlrkmbfgb7nezdtjuhu90f8jarbw=W439-H950-No),[CARRO COMPRAS ANDROID](Https://Lh3.Googleusercontent.Com/ -Ag1AHQJR07mk2ncLM Yymr4w2fxrtdjtqqrdr Kzlfbtakvrlf Sclsn0fhut9ezizyw8tfthi72gnxysbjabyhw5sqeh8ihzq1wfy8hp6c16w6oa0ap6k9qrssjnoxlc502tv8odjzy9pcukcoqwh1qsbzusyk6gtn9qr1-Pdn57xchedontmeewc9puytgxpwmmbblaovyawmsdzn5ea3ztvnxvhhomlriywdhlhzlcozmqv8ovvlckccgt4ddhordaufkpzemc7q0fr85hpywqhwii8akohj0mau0s29kporgpavbywyb3zgvm45ehgpx7mkupfzht10avg84ombfbynbnkjw84ruxzslbx Wnportvjxfdnpsvhcekc9exrxfk7dxsccx7 Lihngc Bk2nSVPWmu5E8KtcJP4MhbnaeETa5KF6mzrS-5nm7bow1k9beydmzp3k5vqplz0wonecj1y0dsycstjuryn80h7dl-JKzo8Pnzy69NtYV7do3M Xc3PWCEeAq4N26HYYsBhsP0tB9ISQiH--Kpg3ov-1vzc4cwuropw4-9dpa5stcs9lyuavkvdlg504ycipzek15igoj3jyig2zwzu1zumepnzy34nuoedlil0roe1bgojc Tkuut8lramahjanpbg4fvw2ft8kwjdsafaw1d-9fpzqpxrsrlvjhyemyylueha2cuntzpaso2lbfb-Njw3tp9wlbugulozptyfxmhg=W439-H950-No)</h2>
+                <table class='overview'>
+                    <tr>
+                        <td width="375px" valign="top">
+                            <div class="test-count-summary">
+                                <div class="test-count-title">
+                                    1 test scenarios 
+                                     |
+                                        <a href="97c546bbbcd85b382ef0a38df883c5c80686d2d73e4a719b577ff83c1278d0c1.csv" title="Download CSV"> <i class="fa fa-download"
+                                                                                        title="Download CSV"></i></a>
+
+
+                                </div>
+                            </div>
+
+                            <div>
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a data-toggle="tab" href="#summary"><i class="fas fa-home"></i> Summary</a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" href="#tests"><i class="fas fa-tachometer-alt"></i> Test
+                                            Results</a>
+                                    </li>
+                                </ul>
+
+
+                                <div class="card border">
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div id="summary" class="tab-pane fade in active">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                            <div style="width:300px;"
+                                                                 class="chart-container automated-and-manual-results">
+                                                                <div class="ct-chart ct-square"></div>
+                                                            </div>
+                                                            <script>
+
+                                                                var labels = [' ', '100%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
+                                                                // Our series array that contains series objects or in this case series data arrays
+
+                                                                var series = [{meta: 'Passing tests (automated)', value: 0}, {meta: 'Passing tests (manual)', value: 1}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 0}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 0}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
+
+                                                                // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                                // as you saw in the previous example
+                                                                var options = {
+                                                                    width: 350,
+                                                                    height: 300
+                                                                };
+
+
+                                                                new Chartist.Pie('.ct-chart', {
+                                                                    series: series,
+                                                                    labels: labels
+                                                                }, {
+                                                                    plugins: [Chartist.plugins.tooltip()],
+                                                                    donut: true,
+                                                                    donutWidth: 60,
+                                                                    donutSolid: true,
+                                                                    startAngle: 270,
+                                                                    showLabel: true
+                                                                }, options);
+
+
+                                                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                                    new Chartist.Pie('.ct-chart', {
+                                                                        series: series,
+                                                                        labels: labels
+                                                                    }, {
+                                                                        plugins: [Chartist.plugins.tooltip()],
+                                                                        donut: true,
+                                                                        donutWidth: 60,
+                                                                        donutSolid: true,
+                                                                        startAngle: 270,
+                                                                        showLabel: true
+                                                                    }, options);
+                                                                });
+
+
+                                                            </script>
+                                                    </div>
+                                                    <div class="col-sm-8">
+
+                                                        <table class="table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th scope="col">Scenario Results (including rows of test
+                                                                    data)
+                                                                </th>
+                                                                <th scope="col" colspan="2" class="automated-stats">
+                                                                    Automated
+                                                                </th>
+                                                                    <th scope="col" colspan="2" class="manual-stats">
+                                                                        Manual
+                                                                    </th>
+                                                                    <th scope="col" colspan="2" class="total-stats">
+                                                                        Total
+                                                                    </th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count">
+                                                                        <a href="f1fd2dcc64ebbcfbd459b7fe42f1c0f24a819f1392296dda07600fcbe7ff3300.html"><i
+                                                                                    class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                    </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                                    <td class="manual-stats">1</td>
+                                                                    <td class="manual-stats">100%</td>
+                                                                    <td class="total-stats">1</td>
+                                                                    <td class="total-stats">100%</td>
+                                                            </tr>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                                class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                    </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                                    <td class="manual-stats">0</td>
+                                                                    <td class="manual-stats"> </td>
+                                                                    <td class="total-stats">0</td>
+                                                                    <td class="total-stats"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                                class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                    </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                                    <td class="manual-stats">0</td>
+                                                                    <td class="manual-stats"> </td>
+                                                                    <td class="total-stats">0</td>
+                                                                    <td class="total-stats"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                                class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                    </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                                    <td class="manual-stats">0</td>
+                                                                    <td class="manual-stats"> </td>
+                                                                    <td class="total-stats">0</td>
+                                                                    <td class="total-stats"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                        <td colspan="7"><i
+                                                                                    class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                        </td>
+                                                            </tr>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count indented-error-category">
+                                                                        <i
+                                                                                class='fa fa-times-circle failure-icon'></i>&nbsp;Failed
+                                                                    </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                                    <td class="manual-stats">0</td>
+                                                                    <td class="manual-stats"> </td>
+                                                                    <td class="total-stats">0</td>
+                                                                    <td class="total-stats"> </td>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count indented-error-category">
+                                                                        <i
+                                                                                class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken
+                                                                    </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                                    <td class="manual-stats">0</td>
+                                                                    <td class="manual-stats"> </td>
+                                                                    <td class="total-stats">0</td>
+                                                                    <td class="total-stats"> </td>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count indented-error-category">
+                                                                        <i
+                                                                                class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                    </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                                    <td class="manual-stats">0</td>
+                                                                    <td class="manual-stats"> </td>
+                                                                    <td class="total-stats">0</td>
+                                                                    <td class="total-stats"> </td>
+                                                            </tr>
+                                                            <tr class="summary-stats">
+                                                                <td class="aggregate-result-count">Total</td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"></td>
+                                                                    <td class="manual-stats">1</td>
+                                                                    <td class="manual-stats"></td>
+                                                                    <td class="total-stats">1</td>
+                                                                    <td class="total-stats"></td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <table class="table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>Execution Time</th>
+                                                                <th>Clock Time</th>
+                                                                <th>Fastest Test</th>
+                                                                <th>Slowest Test</th>
+                                                                <th>Average Execution Time</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td>6s</td>
+                                                                <td>6ms</td>
+                                                                <td>6s</td>
+                                                                <td>6s</td>
+                                                                <td>6s</td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <h3>Functional Coverage Overview</h3>
+
+
+                                                                    <h4>Features</h4>
+
+                                                                    <table class="table feature-coverage-table"
+                                                                           id="Feature">
+                                                                        <thead>
+                                                                        <tr>
+                                                                            <th>Feature</th>
+                                                                            <th style="width:7.5em;">Scenarios</th>
+                                                                            <th style="width:7.5em;">% Pass</th>
+                                                                            <th style="width:7.5em;">Result</th>
+                                                                            <th>Coverage</th>
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                        <a href="47f77dd671d1592461a7e3daa9e3d14358642d40c91d94afc79416903d7c1fd7.html">Funcionalidades Manuales para Scan and Go</a>
+                                                                                </td>
+                                                                                <td>1</td>
+                                                                                <td>100%</td>
+                                                                                <td>
+                                                                                        <i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="progress">
+                                                                                            <div class="progress-bar"
+                                                                                                 role="progressbar"
+                                                                                                 style="width: 100%; background-color: #30cb23"
+                                                                                                 aria-valuenow="1"
+                                                                                                 title="100% success"
+                                                                                                 aria-valuemin="0"
+                                                                                                 aria-valuemax="100">
+                                                                                            </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <h3>Tags</h3>
+
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <div>
+                                                                                <a href="2e66dcd8bc77107a2b969b04debaf341826623bd372af5bcd15fba9ce62c37cf.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                    class="fa fa-tag"></i> Manual-Pago-Exitoso&nbsp;&nbsp;&nbsp;1</span>
+                                                                                </a>
+                                                                                <a href="9a26bd101adfda745f743db04eb3269922eb1ff4d86d9997efeca1ebfe995ac4.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                    class="fa fa-tag"></i> Manual&nbsp;&nbsp;&nbsp;1</span>
+                                                                                </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                            <h5 class="card-title">Capability</h5>
+                                                                        <div>
+                                                                                <a href="6535427ed525e33142302485ddf71c355b0eb6b673f8ca5a415fe96c7fab6845.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                    class="fa fa-tag"></i> Manual&nbsp;&nbsp;&nbsp;1</span>
+                                                                                </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                            <h5 class="card-title">Feature</h5>
+                                                                        <div>
+                                                                                <a href="47f77dd671d1592461a7e3daa9e3d14358642d40c91d94afc79416903d7c1fd7.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                    class="fa fa-tag"></i> Manual/Funcionalidades Manuales Para Scan And Go&nbsp;&nbsp;&nbsp;1</span>
+                                                                                </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div id="tests" class="tab-pane fade">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                                            No automated tests were executed
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                            <table class="scenario-result-table table"
+                                                                   id="manual-scenario-results">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th>Feature</th>
+                                                                    <th class="test-name-column" style="width:60em;">
+                                                                        Scenario
+                                                                    </th>
+                                                                    <th>Steps</th>
+                                                                    <th>Result</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                                <a href="47f77dd671d1592461a7e3daa9e3d14358642d40c91d94afc79416903d7c1fd7.html">Funcionalidades Manuales para Scan and Go</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="19dc86a3bd68323c998bcc05eb0a568f701a178a1b87311009716391906789ce.html">desea ingresar a Scan & Go , registrar productos y proceder al pago(manual)</a>
+                                                                        </td>
+                                                                        <td>3</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                        </td>
+
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="beforefooter"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <span class="version">Serenity BDD version 2.0.70</span>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
