@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Serenity report generated 17-10-2019 17:22
+=======
+Serenity report generated 30-09-2019 14:01
+>>>>>>> a59f7452b74e866fe14228b93af3ab7394e2deeb
 2 test scenarios 
 
 Passed:             2

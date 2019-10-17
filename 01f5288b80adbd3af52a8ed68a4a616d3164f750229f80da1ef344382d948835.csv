@@ -1,3 +1,8 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
+<<<<<<< HEAD
 "Funcionalidades Manuales para Scan and Go","desea ingresar a Scan & Go , registrar productos y proceder al pago(manual)","SUCCESS","2019-10-17T17:21:31.883-05:00[America/Bogota]","0.0","6.35"
 "Funcionalidad de Scan & Go","El usuario desea ingresar a Scan & Go , registrar productos y proceder al pago","SUCCESS","2019-10-17T17:21:39.872-05:00[America/Bogota]","0.0","69.69"
+=======
+"Envio de notificaciones Push","Enviar notifiaciones push a los usuarios de app exito Medellin","SUCCESS","2019-09-30T14:00:48.262-05:00[America/Bogota]","0.0","22.73"
+"Comprobar las opciones  de la consola App Compañia","cambiar la receta del dia en consola app","SUCCESS","2019-09-30T14:00:48.233-05:00[America/Bogota]","0.0","40.97"
+>>>>>>> a59f7452b74e866fe14228b93af3ab7394e2deeb
